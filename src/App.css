@@ -1,3 +1,10 @@
+*{
+  box-sizing: border-box;
+  color: #515151;
+  font-family: Yantramanav,sans-serif;
+  margin: 0;
+  padding: 0;
+}
 .App {
   text-align: center;
 }
@@ -13,26 +20,93 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+
 
 .App-link {
   color: #61dafb;
 }
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+
+@media screen and (min-width: 500px) {
+  *{
+    box-sizing: border-box;
+    color: #515151;
+    font-family: Yantramanav,sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  .product-card{
+    display: grid;
+    row-gap: 20px;
+    padding: 33px;
+    
+   
+  }
+  .product-card li{
+    
+    border: 2px solid black;
+   list-style: none;
+  
+   padding: 20px 10px;
+   width: 100%;
+    
+    
+    
+  }
+  li img {
+    display: block;
+      height: 80%;
+      margin: 0 auto;
+      object-fit: contain;
+      width: 80%;
+      min-height: 100px;
+  }
+  .info{
+    padding: 20px 20px 30px;
+  }
+  .info .brand {
+    color: var(--gray);
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .product-card .info * {
+    display: block;
   }
 }

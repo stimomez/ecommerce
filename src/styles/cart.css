@@ -1,0 +1,83 @@
+.cart-modal{
+    color: #515151;
+    position: fixed;
+    top: 70px;
+    bottom: 0;
+    right: 0;
+    background: #ffffff;
+    box-shadow: 2px 2px 2px 8px rgba(0, 0, 0, .3);
+    
+   
+    width: 250px;
+    transition: 1s;
+    transform: translateX(260px);
+    overflow: auto;
+    z-index: 100;
+}
+.open{
+    transform: translateX(0);   
+}
+.cart-modal li{
+    list-style: none;
+    text-align: start;
+    padding: 15px 0;
+}
+.cart-modal h3{
+    padding: 17px 11px;
+    text-align: start;
+}
+.card-cart > strong > p{
+    color: rgba(0, 0, 0, .3);
+    font-size: 0.75em;
+}
+.card-cart > strong > h2{
+    font-size: 0.75em;
+    width: 89%;
+}
+.card-cart > p{
+    width: 10px;
+    
+    margin: 10px;
+    text-align: center;
+    margin-left: 2%;
+    border: 1px solid rgba(0, 0, 0, 0.397);
+    padding: 5px 33px 5px 24px;
+    
+}
+.cart-modal > button{
+    position: absolute;
+    bottom: 8px;
+    width: 94%;
+    left: 0;
+    padding: 10px 5px;
+    background: #f85555;
+    color: #ffffff;
+    border: 0;
+    margin: 15px 20px 0 10px;
+   
+}
+
+.card-cart{
+    padding: 10px;
+    position: relative;
+}
+
+
+.card-cart  strong span > button{
+    position: absolute;
+    top: 11px;
+    right: 10px;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+.card-cart > span{
+    position: absolute;
+    right: 4px;
+    color: rgba(0, 0, 0, 0.397);
+    font-size: 0.75em;
+}
+.card-cart > span strong{
+    font-size: 1.3em; 
+      
+}

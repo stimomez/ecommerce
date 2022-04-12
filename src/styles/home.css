@@ -1,0 +1,121 @@
+.container-home{
+ display: grid;
+ grid-template-columns: 20% auto;
+ gap: 6px;
+ 
+}
+.categories-products{
+    grid-column: 1/2;
+    margin-top: 100px;
+    margin: 100px 2vw ;
+   
+}
+.categories-products h3{
+    text-align: start;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.397);
+    padding: 2px;
+}
+.categories-products li{
+    list-style: none;
+    text-align: start;
+    margin: 10px;
+    background: rgba(228, 223, 223, 0.199);
+    cursor: pointer;
+}
+.categories-products button{
+    padding: 7px;
+    background: transparent;
+    border: 0;
+    font-size: 1em;
+    cursor: pointer;
+    
+}
+.categories-products li:active {
+ color:rgba(228, 223, 223, 0.199);
+ background: rgba(0, 0, 0, 0.397);
+}
+.search-products{
+    grid-column: 2/3;
+    display: grid;
+    margin-top: 70px;
+    
+}
+
+.search-products form input{
+    border: 1px solid rgba(0, 0, 0, 0.397);
+    width: 83%;
+    height: 40px; 
+    padding-left: 12px;
+    color: rgba(0, 0, 0, 0.397);
+    
+}
+.search-products form button{
+    border: 0;
+    width: 7.8%;
+    height: 40px;
+   
+    cursor: pointer;
+    background: #f85555;;
+}
+.product-card{
+    margin-top: 20px;
+    
+    
+    display: grid;
+    gap: 20px;
+    padding: 33px;
+    grid-template-columns: 1fr 1fr 1fr;
+   
+  }
+  .product-card a{
+      text-decoration: none;
+  }
+  
+  .product-card li{
+    
+    border: 1px solid rgba(0, 0, 0, 0.397);
+   list-style: none;
+   margin: 10px;
+   padding: 0;
+   width: 100%;
+   max-width: 300px;
+   border-radius: 8px;
+   min-height: 400px;
+  position: relative;
+    
+    
+    
+  }
+  li img {
+     display: block;
+      height: 80%;
+     margin: 12px auto;
+      object-fit:scale-down;
+      width: 100%;
+      max-height: 240px;
+
+      
+  }
+ 
+  .info{
+    
+    border-top:1px solid rgba(0, 0, 0, 0.397);
+    
+  }
+  .info strong{
+      text-align: start;
+      margin-left: 8px;
+  }
+  .info p{
+      color: rgba(0, 0, 0, 0.397);;
+     text-align: start;
+     margin-bottom: 5px;
+  }
+  .add-cart{
+      border: 0;
+      background-color: aliceblue;
+      position: absolute;
+      right: 30px;
+      bottom: 30px;
+     
+  }
