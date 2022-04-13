@@ -15,7 +15,7 @@ const ProductsDetail = () => {
     
     const [ productsFiltered, setProductsFiltered ] = useState([]);
     //para controlar la cantidad del carrito
-    const [ units, setUnits ] = useState(0);
+    const [ units, setUnits ] = useState(1);
     
     useEffect(()=>{
         dispatch(getNewsThunk())
@@ -39,6 +39,7 @@ const ProductsDetail = () => {
             quantity: Number(units)}
          
         dispatch(addCartThunk(productsToCart))
+        setUnits(1)
         
     }
       console.log(productsFound)

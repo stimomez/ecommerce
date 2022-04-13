@@ -1,6 +1,9 @@
 footer{
     background: #3c3c3b;
     padding: 90px;
+ 
+    width: 100%;
+    bottom: 0;
 }
 footer ul{
     display: flex;

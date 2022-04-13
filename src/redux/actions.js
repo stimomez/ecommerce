@@ -84,6 +84,7 @@ export const addCartThunk = productsToCart => {
     return dispatch => {
         dispatch(setIsLoanding(true))
         return axios.post('https://ecommerce-api-react.herokuapp.com/api/v1/cart',productsToCart, getConfig())
+        .then(res => dispatch(getCartThunk()))
         .finally(() =>dispatch(setIsLoanding(false)))
     }
     

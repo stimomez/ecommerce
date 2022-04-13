@@ -3,6 +3,9 @@ import React from 'react';
 const CardCart = ({carProduct, navigate, dispatch, deleteCartThunk}) => {
     console.log(carProduct)
     const total = carProduct.price * carProduct.productsInCart.quantity ;
+    const totalCart = [];
+    totalCart.push(total)
+    
     return (
         <div className='card-cart'>
                     <strong  onClick={ ()=> navigate(`/products/${carProduct.id}`)}>

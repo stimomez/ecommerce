@@ -30,8 +30,11 @@
     cursor: pointer;
     
 }
+.categories-products button:active{
+ color:#ffffff;
+}
 .categories-products li:active {
- color:rgba(228, 223, 223, 0.199);
+  
  background: rgba(0, 0, 0, 0.397);
 }
 .search-products{
