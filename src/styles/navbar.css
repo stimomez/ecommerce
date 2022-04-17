@@ -85,18 +85,13 @@
     
     
  }
- 
-.navbar{
-    position: relative;
- 
-}
 
 .form-login{
     position: absolute;
-    top: 74px;
-    right: 12%;
-    width: 15%;
-    padding: 20px;
+    top: 72px;
+    right: 9%;
+    width: 20%;
+    padding: 15px;
     background: #ffffff;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, .3);
     transform: scale(0);
@@ -106,16 +101,25 @@
     
 }
 .form-login img{
-    margin-top: -12px;
+   margin-bottom: 10px;
     width: 45%;
     left: 10px;
 }
+.form-login input{
+    height: 30px;
+    margin-bottom: 10px;
+    width: 90%;
+
+}
 .form-login button{
     padding: 3px;
-    color: #2fa8f8;
+    color: #ffffff;
     background: transparent;
     border: 0;
-   
+    width: 98%;
+    height: 35px;
+    background: rgb(236, 93, 93);
+    text-transform: uppercase;
     
     
     

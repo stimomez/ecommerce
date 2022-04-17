@@ -4,13 +4,16 @@
     top: 70px;
     bottom: 0;
     right: 0;
+    padding: 10px;
+    padding-bottom: 0;
+    
     background: #ffffff;
     box-shadow: 2px 2px 2px 8px rgba(0, 0, 0, .3);
     
    
-    width: 250px;
+    width: 280px;
     transition: 1s;
-    transform: translateX(260px);
+    transform: translateX(290px);
     overflow: auto;
     z-index: 100;
 }
@@ -45,12 +48,18 @@
     
 }
 .checkout{
+    position: sticky;
     border-top: 1px solid rgba(0, 0, 0, 0.397);
     margin-top: 30px;
+    bottom: 0;
+    height: 20%;
+    background: rgb(255, 255, 255);
+    z-index: 50;
 }
 .checkout > button{
+   
     position: absolute;
-    bottom: 20px;
+    top: 45px;
     width: 94%;
     left: 0;
     padding: 10px 5px;
@@ -66,13 +75,12 @@
     color: rgba(0, 0, 0, .3);
     font-size: 0.9em;
     margin-top: 13px;
-   
+    
 }
 .checkout strong{
     position: absolute;
     right: 4px;
     margin-top: 13px;
-   
 }
 .card-cart{
     padding: 10px;

@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link, useNavigate  } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { Cart } from '.';
 
@@ -17,12 +17,33 @@ const NavBar = () => {
     const [ loginError, setLoginError ] = useState("");
     
     const dispatch = useDispatch();
+    const navigate = useNavigate();
    
 
     const openCart = () => {
-        setIsCartOpen(!isCartOpen);
-        dispatch(getCartThunk());
+        if (localStorage.getItem("token")) {
+            setIsCartOpen(!isCartOpen);
+            dispatch(getCartThunk());
+           
+        }else{
+            console.log('estoy cerrado')
+            setIsLoginOpen(!isLoginOpen)
+        }
+       
     }
+    const openPurchases = () => {
+        if (localStorage.getItem("token")) {
+            dispatch(getPurchasesThunk())
+            navigate('/purchases')
+            console.log('entre')
+           
+        }else{
+            console.log('estoy cerrado')
+            setIsLoginOpen(!isLoginOpen)
+        }
+       
+    }
+    
 
     const login = e => {
         e.preventDefault();
@@ -52,31 +73,26 @@ const NavBar = () => {
                    
                     </strong>
                     </Link>
-                    
-                
-               
-                
-                    <div className="header-buttons-login">
+                     <div className="header-buttons-login">
                   <button onClick={()=>setIsLoginOpen(!isLoginOpen)}>
                   <i className="fa-solid fa-right-to-bracket"></i>
                     </button>
                     </div>
                     <div className="header-buttons-cart">
                     <button onClick={()=> openCart() }>
-                    <i className="fas fa-shopping-cart"></i>
-                    
+                    <i className="fas fa-shopping-cart"></i>                    
                     </button>
                     </div>
-                  <Link to={"/purchases"}> 
+                  
                    <div className="header-buttons-purchases">
                     <button 
-                        onClick={() => dispatch(getPurchasesThunk())}
+                        onClick={() => openPurchases()}
                         disabled={!localStorage.getItem("token")}
                         >
                        <i className="fas fa-money-check"></i>
                         </button>
                         </div>
-                  </Link>
+                 
                 
             </nav>
             </div>
@@ -99,6 +115,8 @@ const NavBar = () => {
                              </>
                              ) : (
                             <>
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBMLgeAVCyTvVd96An7ec4XKwiJs7uULpDVNUPksggWmY3sBuLcEK0kgwcuMJ84_gs4Kk&usqp=CAU" alt="" />
+                               <br />                            
                                 <input
                                     type="email"
                                     placeholder='Email'
@@ -113,7 +131,7 @@ const NavBar = () => {
                                     
                                 />
                                 <p>{loginError}</p>
-                                <button>Submit</button>
+                                <button>Login</button>
                                 
                            </>
                         )

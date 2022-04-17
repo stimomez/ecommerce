@@ -89,16 +89,26 @@
     
     
   }
-  li img {
+li img{
      display: block;
       height: 80%;
      margin: 12px auto;
-      object-fit:scale-down;
+      object-fit:contain;
       width: 100%;
       max-height: 240px;
-
       
-  }
+}
+
+li .over{
+    position: absolute;
+    opacity: 0;
+}
+
+li .over:hover{
+    opacity: 1;
+    background: #fff;
+    transition: .7s;
+}
  
   .info{
     

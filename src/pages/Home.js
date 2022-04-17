@@ -66,7 +66,8 @@ const Home = () => {
                                 products.products?.map(product => (
                                     <li key={product.id}>
                                         <Link to={`/products/${product.id}`}> 
-                                        <img src={product.productImgs[0]} alt="" />
+                                             <img className='over' src={product.productImgs[1]} alt="" />
+                                             <img src={product.productImgs[0]} alt="" />
                                         <div className="info">
                                             <strong>{product.title}</strong> 
                                                 <br />

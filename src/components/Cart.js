@@ -40,7 +40,9 @@ const Cart = ({isOpen}) => {
             }
             <div className="checkout">
             <span>Total: </span>  <strong> $ {totalCart}</strong>
-            <button onClick={() => dispatch(checkoutThunk())} >
+            <button
+             onClick={() => dispatch(checkoutThunk())}
+             disabled={totalCart <= 0} >
                 Checkout</button>
                 </div>
         </div>
