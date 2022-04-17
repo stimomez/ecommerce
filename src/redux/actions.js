@@ -1,5 +1,4 @@
 import axios from "axios"
-import { ProductsDetail } from "../pages"
 
 export const actions = {
     setNews: "SET_NEW",
