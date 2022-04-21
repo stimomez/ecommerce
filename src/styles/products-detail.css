@@ -5,48 +5,6 @@
 }
 
 
-.container-carrucel{
-    max-width: 500px;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-  .flex{
-    display: flex;
-    transition: transform 1s;
-  }
-  .quote{
-    padding: 0 50px;
-  }
-  
-  .quote img{
-    display: block;
-    height: 80%;
-    width: 90%;
-    object-fit: cover;
-    border-radius: 10px;
-    max-width: 400px;
-    max-height: 450px;
-    text-align: center;
-  }
-  
-  
-  .button{
-    background-color: #f85555;
-    border: none;
-    margin: 18px 7px;
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: .4s;
-  }
-  .button:hover{
-    background-color: #f85555;
-  }
-  .button.active{
-    width: 27px;
-    border-radius: 27px;
-  }
 
 .description{
     padding: 25px;
@@ -127,6 +85,7 @@
     width: 100%;
     list-style: none;
     position: relative;
+    
 }
 
 .related-products li img {
@@ -170,6 +129,7 @@ li .over-related-products:hover{
     color: rgba(0, 0, 0, 0.356);
     text-align: start;
     margin-left: 25px;
+    
 }
 .price + p{
     text-align: start;
