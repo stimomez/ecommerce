@@ -96,7 +96,8 @@ export const getCartThunk = () => {
         .then(res => dispatch(setCart(res.data.data)))
         .catch(er => {
             if (er.response.status === 404) {
-                console.log('El carro esta vacio')
+                console.log('El carro esta vacio');
+                dispatch(setCart(''))
             }
         })
         .finally(() =>dispatch(setIsLoanding(false)))
@@ -117,10 +118,14 @@ export const checkoutThunk = () => {
     return dispatch => {
         dispatch(setIsLoanding(true))
         return axios.post(`https://ecommerce-api-react.herokuapp.com/api/v1/purchases`,{}, getConfig())
-        .then(() => dispatch(getCartThunk()))
-        .finally(() =>dispatch(setIsLoanding(false)))
-        
+     //   .then( () => dispatch(getCartThunk()))
+        .finally(() =>{
+            dispatch(setIsLoanding(false))
+            dispatch(getCartThunk())
+        })
+      
     }
+    
 }
 export const getPurchasesThunk = () => {
     return dispatch => {

@@ -35,7 +35,7 @@
 }
 
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 912px) {
   *{
     box-sizing: border-box;
     color: #515151;

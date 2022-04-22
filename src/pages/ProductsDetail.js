@@ -46,8 +46,15 @@ const ProductsDetail = () => {
         setUnits(1)
         
     }
+
+    
+  
+    const goUp = () => {
         
-                 
+          
+            window.scrollTo(0, 0  ) 
+          
+    }         
         
 
         
@@ -84,7 +91,7 @@ const ProductsDetail = () => {
                                 <img  className="over-related-products"  src={productsItem.productImgs[0]}alt=""/>
                                 <img src={productsItem.productImgs[1]} alt="" />
                                 <div className='title-related-products'>
-                            <Link to={`/products/${productsItem.id}`}> <p>{productsItem.title} </p></Link>
+                            <Link to={`/products/${productsItem.id}`}  onClick={()=> goUp()} > <p>{productsItem.title} </p></Link>
                             <br />
                             <p className='price'>Price</p>
                             <p>$ {productsItem.price}</p>
