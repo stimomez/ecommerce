@@ -1,55 +1,54 @@
-.purchases{
-    margin: 0 auto;
-    margin-top: 100px;
-    width: 80%;
-    text-align: start;
-}
-.purchases h1{
-    font-size: 1.4em;
-    margin-top: 110px;
-    padding: 25px 0;
-
-}
-.cart-purchases{
-    border-radius: 7px;
-    border:1px solid rgba(0, 0, 0, 0.397);
-    margin: 14px 0;
-   
-}
-.cart-purchases h5{
-    border-bottom: 1px solid rgba(0, 0, 0, 0.397);
-    padding: 15px;
-
-}
-.cart-purchases ul{
-    list-style: none;
-    padding: 20px;
-    position: relative;
-   
-}
-.cart-purchases ul li{
-    padding: 10px;
-}
-.cart-purchases ul li > a{
-    text-decoration: none;
+.purchases {
+  margin: 0 auto;
+  margin-top: 100px;
+  width: 80%;
+  text-align: start;
 }
 
-.cart-purchases ul .title-purchases{
-    margin-left: 15%;
-    color:#515151;
-    font-weight: 100;
+.purchases .purchases-title {
+  font-size: 1.4em;
+  margin-left: 9%;
+  padding: 45px 0;
 }
-.cart-purchases ul .quantity-purchases{
-    position: absolute;
-    right: 29%;
-    border:1px solid rgba(0, 0, 0, 0.397);
-    padding:6px 20px;
-    font-weight: 100;
+.cart-purchases {
+  border-radius: 7px;
+  border: 1px solid rgba(0, 0, 0, 0.397);
+  margin: 14px auto;
+  width: 80%;
+}
+.date {
+  font-size: 94%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.397);
+  padding: 15px 9%;
+  
+}
+.cart-purchases-description {
+  list-style: none;
+  padding: 4%;
+  position: relative;
+}
+.cart-purchases-description li {
+  padding: 10px;
+}
+.cart-purchases-description li > a {
+  text-decoration: none;
+}
 
+.product-purchases-title {
+  margin-left: 5%;
+  color: #515151;
+  font-weight: 100;
+  
 }
-.cart-purchases ul .price-purchases{
-    position: absolute;
-    right: 4%;
-    font-size: 0.99em;
-    
+.quantity-purchases {
+  position: absolute;
+  right: 29%;
+  border: 1px solid rgba(0, 0, 0, 0.397);
+  padding: 6px 20px;
+  font-weight: 100;
+}
+.price-purchases {
+  position: absolute;
+  right: 4%;
+  font-size: 0.99em;
 }

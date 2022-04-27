@@ -64,7 +64,7 @@ const CardPurchases = ({datePurchase}) => {
     
     return (
         <div>
-           <h5>{date.month} {date.day}, {date.year}</h5>
+           <h1 className="date">{date.month} {date.day}, {date.year}</h1>
         </div>
     );
 };

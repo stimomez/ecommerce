@@ -1,146 +1,144 @@
-.container-home{
- display: grid;
- grid-template-columns: 20% auto;
- gap: 6px;
- 
+.container-home {
+  display: grid;
+  grid-template-columns: 20% auto;
+  gap: 6px;
 }
-.categories-products{
-    grid-column: 1/2;
-    margin-top: 100px;
-    margin: 100px 2vw ;
-   
+.categories-products {
+  grid-column: 1/2;
+  margin-top: 100px;
+  margin: 100px 2vw;
 }
-.categories-products h3{
-    text-align: start;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.397);
-    padding: 2px;
+.categories-products h3 {
+  text-align: start;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.397);
+  padding: 2px;
 }
-.categories-products li{
-    list-style: none;
-    text-align: start;
-    margin: 10px;
-    background: rgba(228, 223, 223, 0.199);
-    cursor: pointer;
+.categories-products li {
+  list-style: none;
+  text-align: start;
+  margin: 10px;
+  background: rgba(228, 223, 223, 0.199);
+  cursor: pointer;
 }
-.categories-products button{
-    padding: 7px;
-    background: transparent;
-    border: 0;
-    font-size: 1em;
-    cursor: pointer;
-    
+.categories-products button {
+  padding: 7px;
+  background: transparent;
+  border: 0;
+  font-size: 1em;
+  cursor: pointer;
 }
-.categories-products button:active{
- color:#ffffff;
+.categories-products button:active {
+  color: #ffffff;
 }
 .categories-products li:active {
-  
- background: rgba(0, 0, 0, 0.397);
+  background: rgba(0, 0, 0, 0.397);
 }
-.search-products{
-    grid-column: 2/3;
-    display: grid;
-    margin-top: 70px;
-    
+.search-products {
+  grid-column: 2/3;
+  display: grid;
+  margin-top: 70px;
 }
 
-.search-products form input{
-    border: 1px solid rgba(0, 0, 0, 0.397);
-    width: 83%;
-    height: 40px; 
-    padding-left: 12px;
-    color: rgba(0, 0, 0, 0.397);
-    
+.search-products form input {
+  border: 1px solid rgba(0, 0, 0, 0.397);
+  width: 83%;
+  height: 40px;
+  padding-left: 12px;
+  color: rgba(0, 0, 0, 0.397);
 }
-.search-products form button{
-    border: 0;
-    width: 7.8%;
-    height: 40px;
-    color: #fff;
-    
-    cursor: pointer;
-    background: #f85555;
+.search-products form button {
+  border: 0;
+  width: 7.8%;
+  height: 40px;
+  color: #fff;
+
+  cursor: pointer;
+  background: #f85555;
 }
-.search-products form button:hover{
-    color: rgba(0, 0, 0, 0.397)
+.search-products form button:hover {
+  color: rgba(0, 0, 0, 0.397);
 }
-.search-products form button:active{
-   color: #f85555;
-   background: #fff;
-   border: 1px solid #f85555;
+.search-products form button:active {
+  color: #f85555;
+  background: #fff;
+  border: 1px solid #f85555;
 }
 
-.product-card{
- 
-    margin-top: 20px;
-    
-    
-    display: grid;
-    gap: 20px;
-    padding: 33px;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: 0 auto;
-    
-  }
-  .product-card a{
-      text-decoration: none;
-  }
-  
-  .product-card li{
-    
-    border: 1px solid rgba(0, 0, 0, 0.397);
-   list-style: none;
-   margin: 10px;
-   padding: 0;
-   width: 100%;
-   max-width: 300px;
-   border-radius: 8px;
-   min-height: 400px;
+.product-card {
+  display: grid;
+  gap: 20px;
+  padding: 33px;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0 auto;
+}
+.product-card a {
+  text-decoration: none;
+}
+.products-list {
+  border: 1px solid rgba(0, 0, 0, 0.397);
+  list-style: none;
+
+  border-radius: 8px;
+
   position: relative;
-    
-    
-    
-  }
-li img{
-     display: block;
-      height: 80%;
-     margin: 12px auto;
-      object-fit:contain;
-      width: 100%;
-      max-height: 240px;
-      
 }
 
-li .over{
-    position: absolute;
-    opacity: 0;
+.products-list .image-main {
+  padding: 3px;
+
+
+  object-fit: contain;
+
 }
 
-li .over:hover{
-    opacity: 1;
-    background: #fff;
-    transition: .7s;
-}
+.over {
+text-align: start;
+  padding: 3px;
  
-  .info{
-    
-    border-top:1px solid rgba(0, 0, 0, 0.397);
-    
-  }
-  .info strong{
-      text-align: start;
-      margin-left: 8px;
-  }
-  .info p{
-      color: rgba(0, 0, 0, 0.397);;
-     text-align: start;
-     margin-bottom: 5px;
-  }
-  .add-cart{
-      border: 0;
-      background-color: aliceblue;
-      position: absolute;
-      right: 30px;
-      bottom: 30px;
-     
-  }
+  object-fit:contain;
+  
+  position: absolute;
+  opacity: 0;
+}
+
+.over:hover {
+  opacity: 1;
+  background: #fff;
+  transition: 0.7s;
+  z-index: 1;
+}
+
+.info {
+  border-top: 1px solid rgba(0, 0, 0, 0.397);
+}
+.info .info-title {
+  padding: 10px 0;
+  font-size: 75%;
+  text-align: start;
+  margin-left: 6%;
+}
+
+.info .title-price {
+  color: rgba(0, 0, 0, 0.397);
+  font-size: 95%;
+  padding: 10px 0;
+  text-align: start;
+  margin-left: 6%;
+}
+.info .price {
+  color: #0000005b;
+  font-size: 98%;
+  padding: 10px 0;
+  text-align: start;
+  margin-left: 6%;
+  margin-bottom: 2%;
+}
+/*
+.add-cart {
+  border: 0;
+  background-color: aliceblue;
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+*/
