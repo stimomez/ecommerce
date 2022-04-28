@@ -1,15 +1,13 @@
-import React from 'react';
+import React from "react";
 
-const ProductDetailImages = ({image}) => {
-    return (
-        <div>
-            <div className="quote">
-        <img src={image.photo} alt="user"/>
-        <h3>{image.name}</h3>
-        
+const ProductDetailImages = ({ image }) => {
+  return (
+    <div>
+      <div className="quote">
+        <img height="70%" width="100%" src={image.photo} alt="user" />
       </div>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default ProductDetailImages;

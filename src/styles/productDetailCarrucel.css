@@ -1,7 +1,7 @@
 
 .container-carrucel{
-    max-width: 500px;
-    margin: 0 auto;
+    
+    
     overflow: hidden;
   }
   .flex{
@@ -9,19 +9,26 @@
     transition: transform 1s;
   }
   .quote{
-    padding: 0 120px;
-   margin:0 24px;
+ 
+ border: 1px solid red;
+ margin:0 100px;
+
+
+  
+  
+
   }
   
   .quote img{
-    display: block;
-    height: 80%;
-    width: 90%;
-    object-fit: cover;
-    border-radius: 10px;
-    max-width: 400px;
-    max-height: 450px;
-    text-align: center;
+    padding:0 17%;
+    object-fit: contain;
+    max-height: 400px;
+    min-height: 300px;
+    max-width: 500px;
+    min-width: 400px;
+
+    
+    
   }
   
   
@@ -31,7 +38,8 @@
     cursor: pointer;
     background: transparent;
     width: 55px;
-    margin-left: 12px;
+    margin: 20px auto;
+    
   }
   
 .image-button-carrucel{
@@ -40,7 +48,7 @@
    height: 100%;
    object-fit: scale-down;
    padding: 2px;
-  
+   
 }
 .image-button-carrucel:hover{
     border: 5px solid #f85555b4;

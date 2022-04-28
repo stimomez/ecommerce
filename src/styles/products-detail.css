@@ -1,23 +1,32 @@
 .container{
-    display: grid;
-    grid-template-columns: 50% 50%;
     margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+   
+    
+    
+    
+
 }
 
 
 
 .description{
-    padding: 25px;
-    margin-right: 100px;
+    
+    padding: 20px;
+    
     
 }
 .description h2{
     padding: 10px;
-    margin-left: 17px;
-    text-align: start;
+    text-align: justify;
 }
 .description p{
-    text-align: start;
+    text-align: justify;
     padding: 10px;
     padding-bottom: 0;
     
@@ -57,21 +66,89 @@
     text-align: start; 
     margin-left: 30px;
 }
-.related-products {
-    grid-column: 1/3;
-    width: 100%;
-   margin: 0 auto;
+.container-carrucel-products{
   
- 
+    padding: 15px;
 }
+
 
 .related-products .subtitle{
     color: #f85555;
     text-align: start;
     margin-left: 24px;
     font-weight: bold;
-    font-size: 1.3em;
+    font-size: 120%;
 }
+
+.related-product-card {
+    display: grid;
+    gap: 20px;
+    padding: 33px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin: 0 auto;
+  }
+  .related-product-card a {
+    text-decoration: none;
+  }
+  .related-products-list {
+    border: 1px solid rgba(0, 0, 0, 0.397);
+    list-style: none;
+  
+    border-radius: 8px;
+  
+    position: relative;
+  }
+  
+  .related-products-list .image-main {
+    padding: 3px;
+  
+  
+    object-fit: contain;
+  
+  }
+  
+  .related-over {
+  text-align: start;
+    padding: 3px;
+   
+    object-fit:contain;
+    
+    position: absolute;
+    opacity: 0;
+  }
+  
+  .related-over:hover {
+    opacity: 1;
+    background: #fff;
+    transition: 0.7s;
+    z-index: 1;
+  }
+  
+  .related-info {
+    border-top: 1px solid rgba(0, 0, 0, 0.397);
+  }
+  .related-info-title {
+    padding: 10px 0;
+    font-size: 75%;
+    text-align: start;
+    margin-left: 6%;
+  }
+  
+  .related-title-price {
+    color: rgba(0, 0, 0, 0.397);
+    font-size: 95%;
+    padding: 10px 0;
+    text-align: start;
+    margin-left: 6%;
+  }
+  .related-price {
+    color: #0000005b;
+    font-size: 98%;
+    padding: 10px 0;
+    text-align: start;
+    margin-left: 6%;
+    margin-bottom: 2%;
+  }
 
 
 

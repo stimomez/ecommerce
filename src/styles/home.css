@@ -5,20 +5,26 @@
 }
 .categories-products {
   grid-column: 1/2;
+  width: 100%;
   margin-top: 100px;
-  margin: 100px 2vw;
+  margin-left: 10%;
+  
+  padding: 5px;
+  
 }
-.categories-products h3 {
+.categories-title {
   text-align: start;
   border-bottom: 2px solid rgba(0, 0, 0, 0.397);
   padding: 2px;
+  font-size: 120%;
 }
-.categories-products li {
+.categories-items {
   list-style: none;
   text-align: start;
-  margin: 10px;
+  margin: 10px 0;
   background: rgba(228, 223, 223, 0.199);
   cursor: pointer;
+  font-size: 80%;
 }
 .categories-products button {
   padding: 7px;

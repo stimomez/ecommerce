@@ -51,8 +51,12 @@ const ProductsDetail = () => {
   };
 
   return (
+    <div >
     <div className="container">
+      <div className="container-carrucel-products">
       <ProductDetailCarrucel productsFound={productsFound} />
+      </div>
+      
 
       <div className="description">
         <h2>{productsFound?.title}</h2>
@@ -70,35 +74,37 @@ const ProductsDetail = () => {
         <h3>$ {productsFound?.price}</h3>
         <button onClick={addCart}>Add to cart</button>
       </div>
+      </div>
       <div className="related-products">
         <p className="subtitle">Discover similar items</p>
 
-        <ul className="product-card">
+        <ul className="related-product-card">
           {productsFiltered.products?.map((productsItem) => (
-            <li className="products-list" key={productsItem.id}>
+            <li className="related-products-list" key={productsItem.id}>
               <img
-                className="over"
+                className="related-over"
                 src={productsItem.productImgs[0]}
                 height="250px" width="250px" 
                 alt=""
               />
-              <img className="image-main" src={productsItem.productImgs[1]} height="250px" width="250px"   alt="" />
-              <div className="info">
+              <img className="related-image-main" src={productsItem.productImgs[1]} height="250px" width="250px"   alt="" />
+              <div className="related-info">
                 <Link
                   to={`/products/${productsItem.id}`}
                   onClick={() => goUp()}
                 >
                   {" "}
-                  <h2 className="info-title">{productsItem.title} </h2>
+                  <h2 className="related-info-title">{productsItem.title} </h2>
                 </Link>
                 <br />
-                <p className="title-price">Price</p>
-                <p className="price">$ {productsItem.price}</p>
+                <p className="related-title-price">Price</p>
+                <p className="related-price">$ {productsItem.price}</p>
               </div>
             </li>
           ))}
         </ul>
       </div>
+    
     </div>
   );
 };

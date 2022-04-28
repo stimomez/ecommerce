@@ -27,14 +27,15 @@ const Home = () => {
   };
 
   return (
+    
     <div className="container-home">
       <h1>HOME</h1>
 
       <div className="categories-products">
-        <h3>Category</h3>
+        <h1 className="categories-title">Category</h1>
         <ul>
           {categories.categories?.map((category) => (
-            <li key={category.id}>
+            <li className="categories-items" key={category.id}>
               <button
                 onClick={() => dispatch(filterCategoriesThunk(category.id))}
               >
@@ -75,6 +76,7 @@ const Home = () => {
           )}
         </ul>
       </div>
+      
     </div>
   );
 };
