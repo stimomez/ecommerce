@@ -63,6 +63,10 @@
   background: #fff;
   border: 1px solid #f85555;
 }
+.icon-search{
+  color: #ffffff;
+  
+}
 
 .product-card {
   display: grid;

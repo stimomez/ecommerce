@@ -51,7 +51,7 @@ const Home = () => {
             placeholder="What are you looking for"
             onChange={(e) => setSearch(e.target.value)}
           />
-          <button><i className="button-search fa-solid fa-magnifying-glass"></i></button>
+          <button><i className="icon-search fa-solid fa-magnifying-glass"></i></button>
         </form>
 
         <ul className="product-card">
