@@ -35,9 +35,9 @@ const ProductDetailCarrucel = ({ productsFound }) => {
   return (
     <div className="container-carrucel">
       <div className="flex" style={width}>
-        {productImgs.map((image) => (
-          <ProductDetailImages image={image} key={image.id} />
-        ))}
+        {productImgs.map((image) => {
+          return <ProductDetailImages image={image} key={image.id} />;
+        })}
       </div>
       <div>
         {productImgs.map((img) => {
@@ -50,13 +50,11 @@ const ProductDetailCarrucel = ({ productsFound }) => {
               onClick={() => setPosition(id + 1)}
             >
               <img
-             
                 className={`image-button-carrucel ${
                   position === id + 1 && "button-border"
                 }`}
                 src={img.photo}
                 alt=""
-               
               />
             </button>
           );

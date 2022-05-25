@@ -27,13 +27,21 @@ const Home = () => {
   };
 
   return (
-    
     <div className="container-home">
       <h1>HOME</h1>
 
       <div className="categories-products">
-        <h1 className="categories-title">Category</h1>
-        <ul>
+        <h1 className="categories-title">
+          Category{" "}
+          <label htmlFor="categories">
+            {" "}
+            <span>
+              <i className="icon-categories fa-solid fa-bars"></i>
+            </span>
+          </label>{" "}
+        </h1>
+        <input type="checkbox" id="categories" />
+        <ul className="categories-list">
           {categories.categories?.map((category) => (
             <li className="categories-items" key={category.id}>
               <button
@@ -52,7 +60,9 @@ const Home = () => {
             placeholder="What are you looking for"
             onChange={(e) => setSearch(e.target.value)}
           />
-          <button><i className="icon-search fa-solid fa-magnifying-glass"></i></button>
+          <button>
+            <i className="icon-search fa-solid fa-magnifying-glass"></i>
+          </button>
         </form>
 
         <ul className="product-card">
@@ -62,11 +72,23 @@ const Home = () => {
             products.products?.map((product) => (
               <li className="products-list" key={product.id}>
                 <Link to={`/products/${product.id}`}>
-                  <img className="over" src={product.productImgs[1]} height="200px" width="200px" alt="" />
-                  <img className="image-main" src={product.productImgs[0]} height="200px" width="200px" alt="" />
+                  <img
+                    className="over"
+                    src={product.productImgs[1]}
+                    height="200px"
+                    width="200px"
+                    alt=""
+                  />
+                  <img
+                    className="image-main"
+                    src={product.productImgs[0]}
+                    height="200px"
+                    width="200px"
+                    alt=""
+                  />
                   <div className="info">
                     <h2 className="info-title">{product.title}</h2>
-                   
+
                     <p className="title-price">Price</p>
                     <h2 className="price">$ {product.price}</h2>
                   </div>
@@ -76,7 +98,6 @@ const Home = () => {
           )}
         </ul>
       </div>
-      
     </div>
   );
 };
