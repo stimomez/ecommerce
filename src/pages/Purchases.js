@@ -15,7 +15,7 @@ const Purchases = () => {
           <ul className="cart-purchases" key={purchase.id}>
             <CardPurchases datePurchase={purchase.createdAt} />
 
-            <ul className="cart-purchases-description" >
+            <ul className="cart-purchases-description">
               {purchase.cart?.products.map((product) => (
                 <li key={product.id}>
                   <Link to={`/products/${product.id}`}>
@@ -27,7 +27,7 @@ const Purchases = () => {
                       {product.productsInCart.quantity}{" "}
                     </strong>{" "}
                     <strong className="price-purchases">
-                      $ {product.price}
+                      ${product.price}
                     </strong>
                   </Link>
                 </li>

@@ -5,21 +5,21 @@ const Footer = () => {
   return (
      
     <footer>
-      <p>© Academlo 2022</p>
+      <p className="text-footer">© Stiven Morales</p>
       <ul className="footer">
-        <li>
-          <a href="https://www.instagram.com/academlohq/">
-            <i className="fa-brands fa-instagram-square"></i>
+        <li className="footer-li">
+          <a href="https://www.instagram.com/stimomez/">
+            <i className="icon-footer fa-brands fa-instagram-square"></i>
           </a>
         </li>
-        <li>
-          <a href="https://www.linkedin.com/company/academlo/">
-            <i className="fa-brands fa-linkedin"></i>
+        <li className="footer-li">
+          <a href="https://www.linkedin.com/in/stiven-morales-meza-8a528421a">
+            <i className="icon-footer fa-brands fa-linkedin"></i>
           </a>
         </li>
-        <li>
-          <a href="https://www.youtube.com/c/academlo">
-            <i className="fa-brands fa-youtube"></i>
+        <li className="footer-li">
+          <a href="https://github.com/stimomez">
+            <i className="icon-footer fa-brands fa-github"></i>
           </a>
         </li>
       </ul>

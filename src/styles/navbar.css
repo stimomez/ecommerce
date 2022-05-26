@@ -16,7 +16,7 @@
   position: absolute;
   left: 15px;
   top: 20px;
-  font-size: 1.7em;
+  font-size: 1.5rem;
 }
 .buttons {
   position: absolute;
@@ -41,7 +41,6 @@
   font-size: 120%;
 }
 
-
 .btn-cart {
   color: rgba(0, 0, 0, 0.397);
   font-size: 120%;
@@ -56,6 +55,7 @@
   top: 72px;
   right: 19.4%;
   width: 20%;
+  min-width: 233px;
   padding: 15px;
   background: #ffffff;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
@@ -70,30 +70,27 @@
   left: 10px;
 }
 .test-data {
- 
   background: #d8f5fd;
   padding: 30px;
   border-radius: 6px;
   margin: 0 auto;
- 
 }
 .test-email {
   text-align: start;
   margin-top: 15px;
 }
-.test-email::after{
-    content: 'john@gmail.com' ;
-
+.test-email::after {
+  content: "john@gmail.com";
 }
-.icon-mail{
-    color: rgba(0, 0, 0, 0.623);
-    margin-right: 7px;
+.icon-mail {
+  color: rgba(0, 0, 0, 0.623);
+  margin-right: 7px;
 }
 .test-password {
   text-align: start;
 }
-.test-password::after{
-    content: 'john1234';
+.test-password::after {
+  content: "john1234";
 }
 .form-login input {
   height: 30px;
@@ -112,4 +109,24 @@
 }
 .form-login.open {
   transform: scale(1);
+}
+@media screen and (max-width: 990px) {
+  .header {
+    border: 0;
+  }
+  .header-buttons {
+    border-left: 0;
+  }
+  .header-buttons button {
+    border-left: 1px solid rgba(0, 0, 0, 0.397);
+    position: relative;
+    top: 26px;
+    background: transparent;
+    border: 0;
+  }
+}
+@media screen and (max-width: 426px) {
+  .form-login {
+    right: 3.4%;
+  }
 }
