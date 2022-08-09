@@ -30,7 +30,6 @@ const NavBar = () => {
     if (localStorage.getItem("token")) {
       dispatch(getPurchasesThunk());
       navigate("/purchases");
-      console.log("entre");
     } else {
       console.log("estoy cerrado");
       setIsLoginOpen(!isLoginOpen);
@@ -42,7 +41,8 @@ const NavBar = () => {
     const credentials = { email, password };
     dispatch(loginThunk(credentials))
       .then((res) => {
-        localStorage.setItem("token", res.data.data.token);
+        console.log(res);
+        localStorage.setItem("token", res.data.token);
         setLoginError("");
         setIsLoginOpen(false);
         setEmail("");
@@ -112,12 +112,10 @@ const NavBar = () => {
               <h4>Test data</h4>
               <div className="test-email">
                 <i className="icon-mail fa-solid fa-envelope"></i>
-                
               </div>
 
               <div className="test-password">
                 <i className="icon-mail fa-solid fa-lock"></i>
-                
               </div>
             </div>
             <br />

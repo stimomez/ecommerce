@@ -12,9 +12,24 @@ const Home = () => {
   const dispatch = useDispatch();
 
   const [search, setSearch] = useState();
+  const [isText, setIsText] = useState(false);
 
   const products = useSelector((state) => state.news);
   const categories = useSelector((state) => state.categories);
+  const productsActives = [];
+  const activeCategories = [];
+
+  products.products?.forEach((product) => {
+    if (product.status === "active") {
+      productsActives.push(product);
+    }
+  });
+
+  categories.categories?.forEach((category) => {
+    if (category.status === "active") {
+      activeCategories.push(category);
+    }
+  });
 
   useEffect(() => {
     dispatch(getNewsThunk());
@@ -24,6 +39,9 @@ const Home = () => {
   const searchProducts = (e) => {
     e.preventDefault();
     dispatch(filterSearchThunk(search));
+    setSearch("");
+    setIsText(false)
+
   };
 
   return (
@@ -42,7 +60,7 @@ const Home = () => {
         </h1>
         <input type="checkbox" id="categories" />
         <ul className="categories-list">
-          {categories.categories?.map((category) => (
+          {activeCategories?.map((category) => (
             <li className="categories-items" key={category.id}>
               <button
                 onClick={() => dispatch(filterCategoriesThunk(category.id))}
@@ -58,9 +76,13 @@ const Home = () => {
           <input
             type="text"
             placeholder="What are you looking for"
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => {
+              setIsText(true);
+              setSearch(e.target.value);
+              
+            }}
           />
-          <button>
+          <button disabled={!isText}>
             <i className="icon-search fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
@@ -69,19 +91,19 @@ const Home = () => {
           {products.products?.length === 0 ? (
             <li>No search results found</li>
           ) : (
-            products.products?.map((product) => (
+            productsActives?.map((product) => (
               <li className="products-list" key={product.id}>
                 <Link to={`/products/${product.id}`}>
                   <img
                     className="over"
-                    src={product.productImgs[1]}
+                    src={product.productImgs?.[1]?.imgUrl}
                     height="200px"
                     width="200px"
                     alt=""
                   />
                   <img
                     className="image-main"
-                    src={product.productImgs[0]}
+                    src={product.productImgs?.[0]?.imgUrl}
                     height="200px"
                     width="200px"
                     alt=""

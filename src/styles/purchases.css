@@ -67,12 +67,27 @@
   padding-top: 2px;
   
 }
+
+.cart-purchases-total{
+  position: absolute;
+  right: 2.3%;
+  text-transform: uppercase;
+  font-size: 0.99rem;
+  bottom: 1.5%;
+  padding-top: 3px;
+}
 @media screen and (max-width: 413px) {
   .price-purchases {
     position: absolute;
     right: 0;
-    font-size: 0.70em;;
+    font-size: 0.70em;
    
+  }
+  .cart-purchases-total{
+    position: absolute;
+    right: 10px;
+    font-size: 0.70em;
+
   }
   .product-purchases-title {
   
@@ -105,4 +120,5 @@
   margin-left: 9%;
   padding: 5px 0;
 }
+
 }

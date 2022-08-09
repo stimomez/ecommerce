@@ -12,9 +12,18 @@ const ProductsDetail = () => {
 
   const { id } = useParams();
 
+  const productsActives = [];
+
   const products = useSelector((state) => state.news);
 
   const [productsFiltered, setProductsFiltered] = useState([]);
+
+  productsFiltered.category?.products.forEach((product) => {
+    if (product.status === "active") {
+      productsActives.push(product);
+    }
+  });
+
   //para controlar la cantidad del carrito
   const [units, setUnits] = useState(1);
 
@@ -26,19 +35,21 @@ const ProductsDetail = () => {
     (productsItem) => productsItem.id === Number(id)
   );
 
+  const categoryId = productsFound?.categoryId;
+
   useEffect(() => {
     if (productsFound) {
       axios
         .get(
-          `https://ecommerce-api-react.herokuapp.com/api/v1/products?category=${productsFound?.category.id}`
+          `https://ecommerce-stiven.herokuapp.com/api/v1/products/category/${categoryId}`
         )
-        .then((res) => setProductsFiltered(res.data.data));
+        .then((res) => setProductsFiltered(res.data));
     }
-  }, [dispatch, productsFound]);
+  }, [categoryId, productsFound]);
 
   const addCart = () => {
     const productsToCart = {
-      id: Number(id),
+      productId: Number(id),
       quantity: Number(units),
     };
 
@@ -51,43 +62,49 @@ const ProductsDetail = () => {
   };
 
   return (
-    <div >
-    <div className="container">
-      <div className="container-carrucel-products">
-      <ProductDetailCarrucel productsFound={productsFound} />
-      </div>
-      
+    <div>
+      <div className="container">
+        <div className="container-carrucel-products">
+          <ProductDetailCarrucel productsFound={productsFound} />
+        </div>
 
-      <div className="description">
-        <h2>{productsFound?.title}</h2>
-        <p>{productsFound?.description}</p>
-        <label htmlFor="units">Units</label>
-        <br />
-        <input
-          type="number"
-          id="units"
-          value={units}
-          onChange={(e) => setUnits(e.target.value)}
-        />
+        <div className="description">
+          <h2>{productsFound?.title}</h2>
+          <p>{productsFound?.description}</p>
+          <label htmlFor="units">Units</label>
+          <br />
+          <input
+            type="number"
+            id="units"
+            value={units}
+            onChange={(e) => setUnits(e.target.value)}
+          />
 
-        <p className="price-description">Price</p>
-        <h3>$ {productsFound?.price}</h3>
-        <button onClick={addCart}>Add to cart</button>
-      </div>
+          <p className="price-description">Price</p>
+          <h3>$ {productsFound?.price}</h3>
+          <button onClick={() => addCart()}>Add to cart</button>
+        </div>
       </div>
       <div className="related-products">
         <p className="subtitle">Discover similar items</p>
 
         <ul className="related-product-card">
-          {productsFiltered.products?.map((productsItem) => (
+          {productsActives?.map((productsItem) => (
             <li className="related-products-list" key={productsItem.id}>
               <img
                 className="related-over"
-                src={productsItem.productImgs[0]}
-                height="250px" width="250px" 
+                src={productsItem.productImgs[0]?.imgUrl}
+                height="250px"
+                width="250px"
                 alt=""
               />
-              <img className="related-image-main" src={productsItem.productImgs[1]} height="250px" width="250px"   alt="" />
+              <img
+                className="related-image-main"
+                src={productsItem.productImgs[1]?.imgUrl}
+                height="250px"
+                width="250px"
+                alt=""
+              />
               <div className="related-info">
                 <Link
                   to={`/products/${productsItem.id}`}
@@ -104,7 +121,6 @@ const ProductsDetail = () => {
           ))}
         </ul>
       </div>
-    
     </div>
   );
 };

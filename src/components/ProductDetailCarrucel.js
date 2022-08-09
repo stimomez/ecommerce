@@ -3,14 +3,15 @@ import { ProductDetailImages } from "../components";
 import "../styles/productDetailCarrucel.css";
 
 const ProductDetailCarrucel = ({ productsFound }) => {
+ 
   const arrayImages = productsFound?.productImgs;
-  // console.log(productsFound)
+  
   const productImgs = [];
 
   for (let i = 0; i < arrayImages?.length; i++) {
     productImgs.push({
       id: i,
-      photo: arrayImages[i],
+      photo: arrayImages[i].imgUrl,
     });
   }
 
@@ -41,7 +42,6 @@ const ProductDetailCarrucel = ({ productsFound }) => {
       </div>
       <div>
         {productImgs.map((img) => {
-          console.log(img);
           const id = img.id;
           return (
             <button

@@ -1,29 +1,30 @@
-import React from 'react';
+import React from "react";
 
-const CardCart = ({carProduct, navigate, dispatch, deleteCartThunk}) => {
-    console.log(carProduct)
-    const total = carProduct.price * carProduct.productsInCart.quantity ;
-    const totalCart = [];
-    totalCart.push(total)
-    
-    return (
-        <div className='card-cart'>
-                    <strong  onClick={ ()=> navigate(`/products/${carProduct.id}`)}>
-                                <p>{carProduct.brand}</p>
-                                <span>
-                                    <button onClick={() => dispatch(deleteCartThunk(carProduct.id))} >
-                                    <i className="fa-solid fa-trash-can"></i>
-                                    </button>
-                                    </span>
-                                   <h2> {carProduct.title} </h2>
-                                </strong>
-                   <p>{carProduct.productsInCart.quantity}</p>
-                   <span>Total:   <strong> $ {total}</strong></span>
-                    
-                    
-            
-        </div>
-    );
+const CardCart = ({ cartProduct, navigate, dispatch, deleteCartThunk }) => {
+  const total = cartProduct.quantity * cartProduct.product.price;
+  const totalCart = [];
+  totalCart.push(total);
+
+
+  return (
+    <div className="card-cart">
+      <strong >
+        <p>{cartProduct.brand}</p>
+        <span>
+          <button
+            onClick={() => dispatch(deleteCartThunk(cartProduct.productId))}
+          >
+            <i className="fa-solid fa-trash-can"></i>
+          </button>
+        </span>
+        <h2> {cartProduct.product.title} </h2>
+      </strong>
+      <p>{cartProduct.quantity}</p>
+      <span>
+        Total: <strong> $ {total}</strong>
+      </span>
+    </div>
+  );
 };
 
 export default CardCart;
