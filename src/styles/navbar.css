@@ -80,7 +80,7 @@
   margin-top: 15px;
 }
 .test-email::after {
-  content: "andres@gmail.com";
+  content: "prueba@gmail.com";
 }
 .icon-mail {
   color: rgba(0, 0, 0, 0.623);
@@ -90,7 +90,7 @@
   text-align: start;
 }
 .test-password::after {
-  content: "andres1234";
+  content: "prueba1234";
 }
 .form-login input {
   height: 30px;

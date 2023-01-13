@@ -41,7 +41,7 @@ const ProductsDetail = () => {
     if (productsFound) {
       axios
         .get(
-          `https://ecommerce-stiven.herokuapp.com/api/v1/products/category/${categoryId}`
+          `https:web-production-6e40.up.railway.app/api/v1/products/category/${categoryId}`
         )
         .then((res) => setProductsFiltered(res.data));
     }
@@ -89,6 +89,7 @@ const ProductsDetail = () => {
         <p className="subtitle">Discover similar items</p>
 
         <ul className="related-product-card">
+          
           {productsActives?.map((productsItem) => (
             <li className="related-products-list" key={productsItem.id}>
               <img

@@ -37,7 +37,7 @@ export const getNewsThunk = () => {
   return (dispatch) => {
     dispatch(setIsLoanding(true));
     axios
-      .get("https://ecommerce-stiven.herokuapp.com/api/v1/products")
+      .get("https://web-production-6e40.up.railway.app/api/v1/products")
       .then((res) => dispatch(setNews(res.data)))
       .finally(() => dispatch(setIsLoanding(false)));
   };
@@ -46,7 +46,7 @@ export const getCategoriesThunk = () => {
   return (dispatch) => {
     dispatch(setIsLoanding(true));
     axios
-      .get("https://ecommerce-stiven.herokuapp.com/api/v1/products/categories")
+      .get("https://web-production-6e40.up.railway.app/api/v1/products/categories")
       .then((res) => dispatch(setCategories(res.data)))
       .finally(() => dispatch(setIsLoanding(false)));
   };
@@ -58,7 +58,7 @@ export const filterCategoriesThunk = (id) => {
     dispatch(setIsLoanding(true));
     axios
       .get(
-        `https://ecommerce-stiven.herokuapp.com/api/v1/products/category/${id}`
+        `https://web-production-6e40.up.railway.app/api/v1/products/category/${id}`
       )
       .then((res) => {
         console.log(res.data.category);
@@ -73,7 +73,7 @@ export const filterSearchThunk = (search) => {
     dispatch(setIsLoanding(true));
     return axios
       .get(
-        `https://ecommerce-stiven.herokuapp.com/api/v1/products/filter/${search}`
+        `https://web-production-6e40.up.railway.app/api/v1/products/filter/${search}`
       )
       .then((res) => dispatch(setNews(res.data)))
       .finally(() => dispatch(setIsLoanding(false)));
@@ -84,7 +84,7 @@ export const loginThunk = (credentials) => {
     dispatch(setIsLoanding(true));
     return axios
       .post(
-        "https://ecommerce-stiven.herokuapp.com/api/v1/users/login",
+        "https://web-production-6e40.up.railway.app/api/v1/users/login",
         credentials
       )
       .finally(() => dispatch(setIsLoanding(false)));
@@ -97,7 +97,7 @@ export const addCartThunk = (productsToCart) => {
 
     return axios
       .post(
-        "https://ecommerce-stiven.herokuapp.com/api/v1/cart/add-product",
+        "https://web-production-6e40.up.railway.app/api/v1/cart/add-product",
         productsToCart,
         getConfig()
       )
@@ -111,7 +111,7 @@ export const getCartThunk = () => {
     dispatch(setIsLoanding(true));
     return axios
       .get(
-        `https://ecommerce-stiven.herokuapp.com/api/v1/cart/products-cart`,
+        `https://web-production-6e40.up.railway.app/api/v1/cart/products-cart`,
         getConfig()
       )
       .then((res) => dispatch(setCart(res.data)))
@@ -130,7 +130,7 @@ export const deleteCartThunk = (productId) => {
     dispatch(setIsLoanding(true));
     return axios
       .delete(
-        `https://ecommerce-stiven.herokuapp.com/api/v1/cart/${productId}`,
+        `https://web-production-6e40.up.railway.app/api/v1/cart/${productId}`,
         getConfig()
       )
       .then(() => dispatch(getCartThunk()))
@@ -143,7 +143,7 @@ export const checkoutThunk = () => {
     dispatch(setIsLoanding(true));
     return axios
       .post(
-        `https://ecommerce-stiven.herokuapp.com/api/v1/cart/purchase`,
+        `https://web-production-6e40.up.railway.app/api/v1/cart/purchase`,
         {},
         getConfig()
       )
@@ -158,7 +158,7 @@ export const getPurchasesThunk = () => {
     dispatch(setIsLoanding(true));
     return axios
       .get(
-        `https://ecommerce-stiven.herokuapp.com/api/v1/users/orders`,
+        `https://web-production-6e40.up.railway.app/api/v1/users/orders`,
         getConfig()
       )
       .then((res) => dispatch(setPurchases(res.data)))
