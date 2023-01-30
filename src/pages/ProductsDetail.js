@@ -40,7 +40,7 @@ const ProductsDetail = () => {
     if (productsFound) {
       axios
         .get(
-          `https:web-production-6e40.up.railway.app/api/v1/products/category/${categoryId}`
+          `https://web-production-6e40.up.railway.app/api/v1/products/category/${categoryId}`
         )
         .then((res) => setProductsFiltered(res.data));
     }

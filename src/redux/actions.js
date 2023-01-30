@@ -46,7 +46,9 @@ export const getCategoriesThunk = () => {
   return (dispatch) => {
     dispatch(setIsLoanding(true));
     axios
-      .get("https://web-production-6e40.up.railway.app/api/v1/products/categories")
+      .get(
+        "https://web-production-6e40.up.railway.app/api/v1/products/categories"
+      )
       .then((res) => dispatch(setCategories(res.data)))
       .finally(() => dispatch(setIsLoanding(false)));
   };
@@ -61,7 +63,6 @@ export const filterCategoriesThunk = (id) => {
         `https://web-production-6e40.up.railway.app/api/v1/products/category/${id}`
       )
       .then((res) => {
-        console.log(res.data.category);
         dispatch(setNews(res.data.category));
       })
       .finally(() => dispatch(setIsLoanding(false)));
