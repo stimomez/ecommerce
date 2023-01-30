@@ -26,7 +26,6 @@ const ProductsDetail = () => {
 
   //para controlar la cantidad del carrito
   const [units, setUnits] = useState(1);
-
   useEffect(() => {
     dispatch(getNewsThunk());
   }, [dispatch]);
@@ -89,9 +88,9 @@ const ProductsDetail = () => {
         <p className="subtitle">Discover similar items</p>
 
         <ul className="related-product-card">
-          
           {productsActives?.map((productsItem) => (
             <li className="related-products-list" key={productsItem.id}>
+
               <img
                 className="related-over"
                 src={productsItem.productImgs[0]?.imgUrl}
