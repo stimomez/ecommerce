@@ -50,7 +50,7 @@ const NavBar = () => {
       })
       .catch((er) => setLoginError(er.response.data.message));
 
-    //console.log(localStorage.getItem("token"))
+
   };
   return (
     <div className="header">

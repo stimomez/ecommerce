@@ -37,7 +37,7 @@ export const getNewsThunk = () => {
   return (dispatch) => {
     dispatch(setIsLoanding(true));
     axios
-      .get("https://web-production-6e40.up.railway.app/api/v1/products")
+      .get("https://ecommerce-server-akpa.onrender.com/api/v1/products")
       .then((res) => dispatch(setNews(res.data)))
       .finally(() => dispatch(setIsLoanding(false)));
   };
@@ -47,7 +47,7 @@ export const getCategoriesThunk = () => {
     dispatch(setIsLoanding(true));
     axios
       .get(
-        "https://web-production-6e40.up.railway.app/api/v1/products/categories"
+        "https://ecommerce-server-akpa.onrender.com/api/v1/products/categories"
       )
       .then((res) => dispatch(setCategories(res.data)))
       .finally(() => dispatch(setIsLoanding(false)));
@@ -60,7 +60,7 @@ export const filterCategoriesThunk = (id) => {
     dispatch(setIsLoanding(true));
     axios
       .get(
-        `https://web-production-6e40.up.railway.app/api/v1/products/category/${id}`
+        `https://ecommerce-server-akpa.onrender.com/api/v1/products/category/${id}`
       )
       .then((res) => {
         dispatch(setNews(res.data.category));
@@ -74,7 +74,7 @@ export const filterSearchThunk = (search) => {
     dispatch(setIsLoanding(true));
     return axios
       .get(
-        `https://web-production-6e40.up.railway.app/api/v1/products/filter/${search}`
+        `https://ecommerce-server-akpa.onrender.com/api/v1/products/filter/${search}`
       )
       .then((res) => dispatch(setNews(res.data)))
       .finally(() => dispatch(setIsLoanding(false)));
@@ -85,7 +85,7 @@ export const loginThunk = (credentials) => {
     dispatch(setIsLoanding(true));
     return axios
       .post(
-        "https://web-production-6e40.up.railway.app/api/v1/users/login",
+        "https://ecommerce-server-akpa.onrender.com/api/v1/users/login",
         credentials
       )
       .finally(() => dispatch(setIsLoanding(false)));
@@ -98,7 +98,7 @@ export const addCartThunk = (productsToCart) => {
 
     return axios
       .post(
-        "https://web-production-6e40.up.railway.app/api/v1/cart/add-product",
+        "https://ecommerce-server-akpa.onrender.com/api/v1/cart/add-product",
         productsToCart,
         getConfig()
       )
@@ -112,7 +112,7 @@ export const getCartThunk = () => {
     dispatch(setIsLoanding(true));
     return axios
       .get(
-        `https://web-production-6e40.up.railway.app/api/v1/cart/products-cart`,
+        `https://ecommerce-server-akpa.onrender.com/api/v1/cart/products-cart`,
         getConfig()
       )
       .then((res) => dispatch(setCart(res.data)))
@@ -131,7 +131,7 @@ export const deleteCartThunk = (productId) => {
     dispatch(setIsLoanding(true));
     return axios
       .delete(
-        `https://web-production-6e40.up.railway.app/api/v1/cart/${productId}`,
+        `https://ecommerce-server-akpa.onrender.com/api/v1/cart/${productId}`,
         getConfig()
       )
       .then(() => dispatch(getCartThunk()))
@@ -144,7 +144,7 @@ export const checkoutThunk = () => {
     dispatch(setIsLoanding(true));
     return axios
       .post(
-        `https://web-production-6e40.up.railway.app/api/v1/cart/purchase`,
+        `https://ecommerce-server-akpa.onrender.com/api/v1/cart/purchase`,
         {},
         getConfig()
       )
@@ -159,7 +159,7 @@ export const getPurchasesThunk = () => {
     dispatch(setIsLoanding(true));
     return axios
       .get(
-        `https://web-production-6e40.up.railway.app/api/v1/users/orders`,
+        `https://ecommerce-server-akpa.onrender.com/api/v1/users/orders`,
         getConfig()
       )
       .then((res) => dispatch(setPurchases(res.data)))

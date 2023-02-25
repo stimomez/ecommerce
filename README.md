@@ -2,7 +2,7 @@
 
 **Instalacion:**
 
-Debes tener instalado nodeJS una vez clonado el proyecto, posteriormente ejecutar el comando:
+Debes tener instalado nodeJS, una vez clonado el proyecto ejecutar el comando:
 
 _npm install_
 
@@ -14,7 +14,7 @@ _¨npm start_
 
 Ecommerce es un proyecto de comercio electronico, puedes logearte, elegir varios articulos y agregarlos a un carrito de compras para depues comprarlos. Este es el link de la API que utilize para dicho proyecto:
 
-[https:web-production-6e40.up.railway.app/](https:web-production-6e40.up.railway.app/ "https:web-production-6e40.up.railway.app/")
+[https://ecommerce-server-akpa.onrender.com/](https://ecommerce-server-akpa.onrender.com/ "https://ecommerce-server-akpa.onrender.com/")
 
 Repositorio de esta API
 
