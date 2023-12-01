@@ -22,7 +22,6 @@ const NavBar = () => {
       setIsCartOpen(!isCartOpen);
       dispatch(getCartThunk());
     } else {
-      console.log("estoy cerrado");
       setIsLoginOpen(!isLoginOpen);
     }
   };
@@ -41,7 +40,6 @@ const NavBar = () => {
     const credentials = { email, password };
     dispatch(loginThunk(credentials))
       .then((res) => {
-        console.log(res);
         localStorage.setItem("token", res.data.token);
         setLoginError("");
         setIsLoginOpen(false);
@@ -49,8 +47,6 @@ const NavBar = () => {
         setPassword("");
       })
       .catch((er) => setLoginError(er.response.data.message));
-
-
   };
   return (
     <div className="header">
@@ -75,7 +71,11 @@ const NavBar = () => {
               onClick={() => openPurchases()}
               disabled={!localStorage.getItem("token")}
             >
-              <i className="btn-purchases fas fa-money-check"></i>
+              <i
+                className={`${
+                  localStorage.getItem("token") && "btn-purchases-hover "
+                } btn-purchases fas fa-money-check`}
+              ></i>
             </button>
           </div>
         </div>
@@ -93,6 +93,7 @@ const NavBar = () => {
             />
             <br />
             <button
+            
               onClick={() => {
                 localStorage.setItem("token", "");
                 setIsLoginOpen(false);
@@ -123,16 +124,25 @@ const NavBar = () => {
               type="email"
               placeholder="Email"
               value={email}
+              required
               onChange={(e) => setEmail(e.target.value)}
             />
             <input
               type="password"
               placeholder="Password"
+              required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
             <p>{loginError}</p>
-            <button>Login</button>
+            <button
+              className={`${
+                email.trim() && password.trim() && "form-login-hover"
+              }`}
+              disabled={!email.trim() || !password.trim()}
+            >
+              Login
+            </button>
           </>
         )}
       </form>

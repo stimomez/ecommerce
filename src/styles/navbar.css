@@ -29,6 +29,15 @@
 .header-buttons {
   border-left: 1px solid rgba(0, 0, 0, 0.397);
 }
+.btn-login {
+  color: rgba(0, 0, 0, 0.397);
+  font-size: 120%;
+  cursor: pointer;
+ 
+}
+.btn-login:hover{
+ font-size: 160%;
+}
 .header-buttons button {
   border-left: 1px solid rgba(0, 0, 0, 0.397);
   position: relative;
@@ -36,20 +45,27 @@
   background: transparent;
   border: 0;
 }
-.btn-login {
-  color: rgba(0, 0, 0, 0.397);
-  font-size: 120%;
-}
 
 .btn-cart {
   color: rgba(0, 0, 0, 0.397);
   font-size: 120%;
+  cursor: pointer;
+}
+.btn-cart:hover{
+ font-size: 160%;
 }
 
 .btn-purchases {
   color: rgba(0, 0, 0, 0.397);
   font-size: 120%;
+  cursor: pointer;
+
 }
+.btn-purchases-hover:hover{
+  font-size: 160%;
+}
+
+
 .form-login {
   position: absolute;
   top: 72px;
@@ -96,7 +112,10 @@
   height: 30px;
   margin-bottom: 10px;
   width: 90%;
+  outline-color: #f85555;
+  padding: 0 2px;
 }
+
 .form-login button {
   padding: 3px;
   color: #ffffff;
@@ -106,6 +125,16 @@
   height: 35px;
   background: rgb(236, 93, 93);
   text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 8px;
+
+}
+.form-login-hover:hover {
+  color: rgb(236, 93, 93);
+  background: transparent;
+  border: 1px solid rgb(236, 93, 93);
+  cursor: pointer;
+
 }
 .form-login.open {
   transform: scale(1);

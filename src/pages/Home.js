@@ -6,13 +6,17 @@ import {
   getCategoriesThunk,
   getNewsThunk,
   filterSearchThunk,
+  setNews,
 } from "../redux/actions";
 import "../styles/home.css";
+import { urlAPI } from "../api/request";
 const Home = () => {
   const dispatch = useDispatch();
 
   const [search, setSearch] = useState();
-  const [isText, setIsText] = useState(false);
+  const [productsToFilter, setproductsToFilter] = useState([]);
+  const [searchProducts, setSearchProducts] = useState([]);
+  const [isText, setIsText] = useState("");
 
   const products = useSelector((state) => state.news);
   const categories = useSelector((state) => state.categories);
@@ -36,12 +40,28 @@ const Home = () => {
     dispatch(getCategoriesThunk());
   }, [dispatch]);
 
-  const searchProducts = (e) => {
+  const filterProducts = (e) => {
     e.preventDefault();
-    dispatch(filterSearchThunk(search));
-    setSearch("");
-    setIsText(false)
+    dispatch(setNews({ status: "success", products: searchProducts }));
+  };
+  const getConfig = () => ({
+    headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+  });
 
+  const filterProductsRequest = (e) => {
+    urlAPI
+      .get("/products", getConfig())
+      .then((res) => setproductsToFilter(res.data.products))
+      .catch(() => alert("Error"));
+  };
+
+  const handleChangeInput = (e) => {
+    setIsText(e.target.value);
+    const products = productsToFilter.filter((product) => {
+      const title = product.title.toLowerCase();
+      return title.includes(e.target.value.toLowerCase());
+    });
+    setSearchProducts(products);
   };
 
   return (
@@ -72,17 +92,16 @@ const Home = () => {
         </ul>
       </div>
       <div className="search-products">
-        <form onSubmit={searchProducts}>
+        <form onSubmit={filterProducts}>
           <input
             type="text"
             placeholder="What are you looking for"
+            onClick={filterProductsRequest}
             onChange={(e) => {
-              setIsText(true);
-              setSearch(e.target.value);
-              
+              handleChangeInput(e);
             }}
           />
-          <button disabled={!isText}>
+          <button disabled={!isText.trim()}>
             <i className="icon-search fa-solid fa-magnifying-glass"></i>
           </button>
         </form>

@@ -40,6 +40,15 @@
   border: 0;
   color: #fff;
   font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 7px;
+ 
+}
+.description button:active{
+  padding: 9px;
+  border: 1px solid #f85555;
+  color: #f85555;
+  background: transparent;
 }
 .price-description {
   color: rgba(0, 0, 0, 0.356);

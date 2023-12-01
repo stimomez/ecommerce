@@ -6,6 +6,7 @@ import { addCartThunk, getNewsThunk } from "../redux/actions";
 import { Link } from "react-router-dom";
 import "../styles/products-detail.css";
 import { ProductDetailCarrucel } from "../components";
+import { urlAPI } from "../api/request";
 
 const ProductsDetail = () => {
   const dispatch = useDispatch();
@@ -38,10 +39,8 @@ const ProductsDetail = () => {
 
   useEffect(() => {
     if (productsFound) {
-      axios
-        .get(
-          `https://ecommerce-server-akpa.onrender.com/api/v1/products/category/${categoryId}`
-        )
+      urlAPI
+        .get(`/products/category/${categoryId}`)
         .then((res) => setProductsFiltered(res.data));
     }
   }, [categoryId, productsFound]);
@@ -75,13 +74,18 @@ const ProductsDetail = () => {
           <input
             type="number"
             id="units"
+            min={1}
             value={units}
             onChange={(e) => setUnits(e.target.value)}
           />
 
           <p className="price-description">Price</p>
           <h3>$ {productsFound?.price}</h3>
-          <button onClick={() => addCart()}>Add to cart</button>
+          <button
+            onClick={() => (localStorage.getItem("token") ? addCart() : {})}
+          >
+            Add to cart
+          </button>
         </div>
       </div>
       <div className="related-products">
@@ -90,7 +94,6 @@ const ProductsDetail = () => {
         <ul className="related-product-card">
           {productsActives?.map((productsItem) => (
             <li className="related-products-list" key={productsItem.id}>
-
               <img
                 className="related-over"
                 src={productsItem.productImgs[0]?.imgUrl}

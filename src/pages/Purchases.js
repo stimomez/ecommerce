@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useSelector } from "react-redux";
 import CardPurchases from "../components/CardPurchases";
 import { Link } from "react-router-dom";

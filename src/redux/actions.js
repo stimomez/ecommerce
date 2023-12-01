@@ -1,4 +1,5 @@
-import axios from "axios";
+
+import { urlAPI } from "../api/request";
 
 export const actions = {
   setNews: "SET_NEW",
@@ -36,19 +37,17 @@ export const setPurchases = (purchase) => ({
 export const getNewsThunk = () => {
   return (dispatch) => {
     dispatch(setIsLoanding(true));
-    axios
-      .get("https://ecommerce-server-akpa.onrender.com/api/v1/products")
-      .then((res) => dispatch(setNews(res.data)))
+    urlAPI
+      .get("/products")
+      .then((res) => {dispatch(setNews(res.data))})
       .finally(() => dispatch(setIsLoanding(false)));
   };
 };
 export const getCategoriesThunk = () => {
   return (dispatch) => {
     dispatch(setIsLoanding(true));
-    axios
-      .get(
-        "https://ecommerce-server-akpa.onrender.com/api/v1/products/categories"
-      )
+    urlAPI
+      .get("/products/categories")
       .then((res) => dispatch(setCategories(res.data)))
       .finally(() => dispatch(setIsLoanding(false)));
   };
@@ -56,12 +55,9 @@ export const getCategoriesThunk = () => {
 
 export const filterCategoriesThunk = (id) => {
   return (dispatch) => {
-    console.log(id);
     dispatch(setIsLoanding(true));
-    axios
-      .get(
-        `https://ecommerce-server-akpa.onrender.com/api/v1/products/category/${id}`
-      )
+    urlAPI
+      .get(`/products/category/${id}`)
       .then((res) => {
         dispatch(setNews(res.data.category));
       })
@@ -72,10 +68,8 @@ export const filterCategoriesThunk = (id) => {
 export const filterSearchThunk = (search) => {
   return (dispatch) => {
     dispatch(setIsLoanding(true));
-    return axios
-      .get(
-        `https://ecommerce-server-akpa.onrender.com/api/v1/products/filter/${search}`
-      )
+    return urlAPI
+      .get(`/products/filter/${search}`)
       .then((res) => dispatch(setNews(res.data)))
       .finally(() => dispatch(setIsLoanding(false)));
   };
@@ -83,11 +77,8 @@ export const filterSearchThunk = (search) => {
 export const loginThunk = (credentials) => {
   return (dispatch) => {
     dispatch(setIsLoanding(true));
-    return axios
-      .post(
-        "https://ecommerce-server-akpa.onrender.com/api/v1/users/login",
-        credentials
-      )
+    return urlAPI
+      .post("/users/login", credentials)
       .finally(() => dispatch(setIsLoanding(false)));
   };
 };
@@ -96,12 +87,8 @@ export const addCartThunk = (productsToCart) => {
   return (dispatch) => {
     dispatch(setIsLoanding(true));
 
-    return axios
-      .post(
-        "https://ecommerce-server-akpa.onrender.com/api/v1/cart/add-product",
-        productsToCart,
-        getConfig()
-      )
+    return urlAPI
+      .post("/cart/add-product", productsToCart, getConfig())
       .then(() => dispatch(getCartThunk()))
       .finally(() => dispatch(setIsLoanding(false)));
   };
@@ -110,11 +97,8 @@ export const addCartThunk = (productsToCart) => {
 export const getCartThunk = () => {
   return (dispatch) => {
     dispatch(setIsLoanding(true));
-    return axios
-      .get(
-        `https://ecommerce-server-akpa.onrender.com/api/v1/cart/products-cart`,
-        getConfig()
-      )
+    return urlAPI
+      .get(`/cart/products-cart`, getConfig())
       .then((res) => dispatch(setCart(res.data)))
       .catch((er) => {
         if (er.response.status === 404) {
@@ -126,14 +110,10 @@ export const getCartThunk = () => {
   };
 };
 export const deleteCartThunk = (productId) => {
-  console.log(productId);
   return (dispatch) => {
     dispatch(setIsLoanding(true));
-    return axios
-      .delete(
-        `https://ecommerce-server-akpa.onrender.com/api/v1/cart/${productId}`,
-        getConfig()
-      )
+    return urlAPI
+      .delete(`/cart/${productId}`, getConfig())
       .then(() => dispatch(getCartThunk()))
       .finally(() => dispatch(setIsLoanding(false)));
   };
@@ -142,26 +122,17 @@ export const deleteCartThunk = (productId) => {
 export const checkoutThunk = () => {
   return (dispatch) => {
     dispatch(setIsLoanding(true));
-    return axios
-      .post(
-        `https://ecommerce-server-akpa.onrender.com/api/v1/cart/purchase`,
-        {},
-        getConfig()
-      )
-      .finally(() => {
-        dispatch(setIsLoanding(false));
-        dispatch(getCartThunk());
-      });
+    return urlAPI.post(`/cart/purchase`, {}, getConfig()).finally(() => {
+      dispatch(setIsLoanding(false));
+      dispatch(getCartThunk());
+    });
   };
 };
 export const getPurchasesThunk = () => {
   return (dispatch) => {
     dispatch(setIsLoanding(true));
-    return axios
-      .get(
-        `https://ecommerce-server-akpa.onrender.com/api/v1/users/orders`,
-        getConfig()
-      )
+    return urlAPI
+      .get(`/users/orders`, getConfig())
       .then((res) => dispatch(setPurchases(res.data)))
       .finally(() => dispatch(setIsLoanding(false)));
   };

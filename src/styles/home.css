@@ -40,6 +40,14 @@ input#categories {
   cursor: pointer;
   font-size: 80%;
   color: #0000005b;
+  border-radius: 8px;
+  padding: 1px;
+ 
+}
+.categories-items:hover{
+  border: 1px solid  rgba(228, 223, 223, 0.199);
+  background: transparent;
+  padding: 0;
 }
 .categories-products button {
   padding: 7px;
@@ -66,13 +74,17 @@ input#categories {
   height: 40px;
   padding-left: 12px;
   color: rgba(0, 0, 0, 0.397);
-  
+  border-radius: 5px;
+  outline-color: #fc6161;
+  margin-right: 5px;
 }
 .search-products form button {
   border: 0;
   width: 7.8%;
   height: 40px;
   color: #fff;
+  border-radius: 5px;
+
 
   cursor: pointer;
   background: #f85555;
