@@ -5,7 +5,6 @@ import {
   filterCategoriesThunk,
   getCategoriesThunk,
   getNewsThunk,
-  filterSearchThunk,
   setNews,
 } from "../redux/actions";
 import "../styles/home.css";
@@ -13,7 +12,6 @@ import { urlAPI } from "../api/request";
 const Home = () => {
   const dispatch = useDispatch();
 
-  const [search, setSearch] = useState();
   const [productsToFilter, setproductsToFilter] = useState([]);
   const [searchProducts, setSearchProducts] = useState([]);
   const [isText, setIsText] = useState("");
